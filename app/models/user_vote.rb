@@ -1,2 +1,0 @@
-class UserVote < ApplicationRecord
-end
