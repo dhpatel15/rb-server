@@ -1,3 +1,3 @@
 class Vote < ApplicationRecord
-	belongs_to: notable, polymorphic: true 
+	belongs_to: votable, polymorphic: true 
 end

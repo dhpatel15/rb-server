@@ -16,16 +16,16 @@ ActiveRecord::Schema.define(version: 2019_02_25_022133) do
 
 
   create_table "votes", force: :cascade do |t|
-    # notable_type will be saved as either a user or comment
-    t.string  "notable_type"
-    # notable_id will be saved as either a user_id or comment_id
-    t.integer  "notable_id"
+    # votable_type will be saved as either a user or comment
+    t.string  "votable_type"
+    # votable_id will be saved as either a user_id or comment_id
+    t.integer  "votable_id"
     # vote will be saved as 1 for upvote and -1 for downvote
-    t.integer  "votable"
+    t.integer  "vote"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
 
-    t.index ["notable_type"], name: "index_favorites_on_to_notable_type"
-    t.index ["notable_id"], name: "index_favorites_on_from_notable_id"
+    t.index ["votable_type"], name: "index_favorites_on_to_votable_type"
+    t.index ["votable_id"], name: "index_favorites_on_from_votable_id"
   end
 end
