@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_02_25_022133) do
     t.string  "votable_type"
     # votable_id will be saved as either a user_id or comment_id
     t.integer  "votable_id"
+    t.integer  "user_id"
     # vote will be saved as 1 for upvote and -1 for downvote
     t.integer  "vote"
     t.datetime "created_at", null: false
@@ -27,5 +28,6 @@ ActiveRecord::Schema.define(version: 2019_02_25_022133) do
 
     t.index ["votable_type"], name: "index_favorites_on_to_votable_type"
     t.index ["votable_id"], name: "index_favorites_on_from_votable_id"
+    t.index ["user_id"], name: "index_favorites_on_from_user_id"
   end
 end
